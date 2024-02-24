@@ -1,0 +1,17 @@
+{
+  "name": "new-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "10-async.js",
+  "scripts": {
+    "start": "7-path.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

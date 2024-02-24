@@ -1,0 +1,55 @@
+//make the server //
+// const http=require("http");
+// const server=http.createServer((req,res)=>{
+//     //this is for the write and
+//     //    res.write("hello in our page");
+//     //    res.end();
+//     //check if we are in the about (/)
+//     if(req.url==='/about'){
+//         //if we there ok sent this massage.
+//         res.write("'hello in the about page'")
+//             //then end this
+//         res.end();
+//     } 
+//     //if we not the about check if we are in the home page 
+//     else if(req.url==='/'){
+//         //if we there ok sent this massage
+//         res.write("'hello in the our home page'")
+//         //then end
+//         res.end();
+//     }else{
+//         //if we not the about and the home page write this code
+//         res.write(`<h1>Hello you have error......</h1> <a href='/'>home page</a>`)
+//         //<a href="what do you want to go">the link name</a>//<a>this for the link
+//         res.end()
+//     }
+   
+// })
+// server.listen(5000);
+
+
+const newServer=require("http");
+const obj={
+    name :"Youssif",
+    adress: "aboNasrallah",
+    hope:"wantToBeProgrammin",
+}
+const Server=newServer.createServer((req,res)=>{
+if (req.url==='/'){
+    res.write(`<h1>we in the home page</h1> 
+     you have many option you can choose one from him <a href="/obj">obj page</a>`)
+    res.end();
+}
+else if(req.url==='/obj'){
+    res.write(JSON.stringify(obj))
+    res.end();
+}
+else{
+    res.write(`<h1>IF you want to return to the home page click <a href="/">here</a></h1>
+    <h2>if you want to back to the obj click <a href="/obj">here</a></h2>
+    `)
+    res.end()
+}
+})
+const PORT=2000;
+Server.listen(PORT,console.log(`we are in the our home page ${PORT}`))
